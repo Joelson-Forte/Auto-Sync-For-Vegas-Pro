@@ -1,395 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Auto Sync for VEGAS Pro - Professional Audio Synchronization" />
-    <title>Auto Sync for VEGAS Pro</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        /* Reset and base layout */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Auto Sync for VEGAS Pro - Professional Audio Synchronization" />
+  <title>Auto Sync for VEGAS Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Reset and base layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Dark theme base */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212; /* dark background */
-            color: #e6e6e6; /* light text */
-            line-height: 1.6;
-        }
+    /* Dark theme base */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #e6e6e6;
+      line-height: 1.6;
+    }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        /* Hero Section */
-        #hero {
-            background-color: #000; /* black hero */
-            color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
+    /* Hero Section */
+    #hero {
+      background-color: #000;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
 
-        #hero h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
+    #hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-        #hero p {
-            font-size: 1.2rem;
-            color: #cfcfcf;
-        }
+    #hero p {
+      font-size: 1.2rem;
+      color: #cfcfcf;
+    }
 
-        .btn-primary {
-            background-color: #1e90ff; /* vivid blue */
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            transition: background 0.25s ease;
-            border: 1px solid rgba(255,255,255,0.06);
-        }
+    .btn-primary {
+      background-color: #1e90ff;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
 
-        .btn-primary:hover {
-            background-color: #0b60d1;
-            color: #fff;
-        }
+    .btn-primary:hover {
+      background-color: #0b60d1;
+      color: #fff;
+    }
 
-        /* Demo */
-        #demo {
-            text-align: center;
-            margin-top: 40px;
-            padding: 50px 0;
-            background-color: #1e1e1e; /* slightly lighter section */
-        }
+    /* Demo */
+    #demo {
+      text-align: center;
+      margin-top: 40px;
+      padding: 50px 0;
+      background-color: #1e1e1e;
+    }
 
-        #demo h2 {
-            color: #fff;
-            margin-bottom: 30px;
-        }
+    #demo h2 {
+      color: #fff;
+      margin-bottom: 30px;
+    }
 
-        #demo iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 450px;
-            margin: 0 auto;
-            display: block;
-            border-radius: 8px;
-            border: 2px solid #2a2a2a;
-            background: #000;
-        }
+    #demo iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 8px;
+      border: 2px solid #2a2a2a;
+      background: #000;
+    }
 
-        @media (max-width: 768px) {
-            #demo iframe {
-                height: 300px;
-            }
-        }
+    @media (max-width: 768px) {
+      #demo iframe {
+        height: 300px;
+      }
+    }
 
-        /* Features (kept structure) */
-        #features {
-            background-color: transparent; /* leave neutral if used */
-            padding: 50px 0;
-            text-align: center;
-        }
+    /* Features */
+    #sync-methods {
+      background-color: #161616;
+      padding: 50px 0;
+      text-align: left;
+    }
 
-        #features ul {
-            list-style: none;
-            padding: 0;
-        }
+    #sync-methods h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #ffffff;
+    }
 
-        #features li {
-            font-size: 1.1rem;
-            margin: 10px 0;
-            color: #d0d0d0;
-        }
+    #sync-methods .sync-block {
+      margin-bottom: 40px;
+    }
 
-        /* Synchronization Methods (Detailed Features Section) */
-        #sync-methods {
-            background-color: #161616; /* dark block */
-            padding: 50px 0;
-            text-align: left;
-        }
+    #sync-methods h3 {
+      color: #1e90ff;
+      margin-bottom: 10px;
+    }
 
-        #sync-methods .sync-block {
-            margin-bottom: 40px;
-        }
+    #sync-methods h4 {
+      margin-top: 20px;
+      color: #cfcfcf;
+    }
 
-        #sync-methods h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #ffffff;
-        }
+    #sync-methods p {
+      color: #dcdcdc;
+    }
 
-        #sync-methods h3 {
-            color: #1e90ff; /* accent blue */
-            margin-bottom: 10px;
-        }
+    #sync-methods ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
 
-        #sync-methods h4 {
-            margin-top: 20px;
-            color: #cfcfcf;
-        }
+    #sync-methods li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #d0d0d0;
+    }
 
-        #sync-methods p {
-            color: #dcdcdc;
-        }
+    #sync-methods hr {
+      border: 0;
+      border-top: 1px solid #2a2a2a;
+      margin: 30px 0;
+    }
 
-        #sync-methods ul {
-            margin-left: 20px;
-            padding-left: 0;
-            list-style-type: disc;
-        }
+    /* Purchase + Contact Combined */
+    #purchase-contact {
+      background-color: #181818;
+      padding: 60px 0;
+    }
 
-        #sync-methods li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #d0d0d0;
-        }
+    .side-by-side {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
 
-        #sync-methods hr {
-            border: 0;
-            border-top: 1px solid #2a2a2a;
-            margin: 30px 0;
-        }
+    .pricing-box, .contact-box {
+      background-color: #1a1a1a;
+      border: 1px solid #2b2b2b;
+      border-radius: 10px;
+      padding: 25px;
+      width: 380px;
+    }
 
-        /* Pricing */
-        #pricing {
-            padding: 50px 0;
-            text-align: center;
-            background-color: #181818;
-        }
+    .pricing-box h2, .contact-box h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
 
-        #pricing h2 {
-            color: #fff;
-        }
+    /* Center card inside pricing box */
+    .pricing-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .pricing-cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+    .pricing-box .card {
+      background-color: #202020;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 85%;
+      text-align: center;
+      color: #e6e6e6;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
 
-        .pricing-cards .card {
-            background-color: #202020;
-            border: 1px solid #2b2b2b;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            color: #e6e6e6;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-        }
+    .pricing-box .card h3 {
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
 
-        .pricing-cards .card h3 {
-            margin-bottom: 15px;
-            color: #1e90ff;
-        }
+    .pricing-box .card p {
+      color: #d6d6d6;
+      margin-bottom: 12px;
+    }
 
-        .pricing-cards .card p {
-            color: #d6d6d6;
-        }
+    /* Contact Form */
+    .contact-box form input,
+    .contact-box form textarea {
+      width: 100%;
+      background-color: #1f1f1f;
+      color: #e6e6e6;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        /* Contact Form */
-        #contact {
-            background-color: #161616;
-            padding: 50px 0;
-            text-align: center;
-        }
+    .contact-box form input:focus,
+    .contact-box form textarea:focus {
+      border-color: #1e90ff;
+      box-shadow: 0 0 0 3px rgba(30,144,255,0.08);
+    }
 
-        #contact h2 {
-            color: #fff;
-            margin-bottom: 20px;
-        }
+    .contact-box form button {
+      display: block;
+      margin: 10px auto 0 auto;
+      background-color: #1e90ff;
+      color: #fff;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
 
-        #contact form input,
-        #contact form textarea {
-            width: 100%;
-            max-width: 500px;
-            background-color: #1f1f1f;
-            color: #e6e6e6;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #333;
-            border-radius: 4px;
-            outline: none;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
+    .contact-box form button:hover {
+      background-color: #0b60d1;
+    }
 
-        #contact form input:focus,
-        #contact form textarea:focus {
-            border-color: #1e90ff;
-            box-shadow: 0 0 0 3px rgba(30,144,255,0.08);
-        }
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #9a9a9a;
+      padding: 20px 0;
+      text-align: center;
+    }
 
-        #contact form button {
-            margin-top: 10px;
-            background-color: #1e90ff;
-            color: #fff;
-            padding: 10px 18px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    .btn-secondary {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-        #contact form button:hover {
-            background-color: #0b60d1;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000;
-            color: #9a9a9a;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .btn-secondary {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .btn-secondary:hover {
-            background-color: #218838;
-        }
-
-        /* Small utility */
-        a { color: #8cc3ff; }
-        hr { border: 0; border-top: 1px solid #2a2a2a; }
-    </style>
+    .btn-secondary:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
-    <header id="hero">
-        <div class="container">
-            <h1>Auto Sync for VEGAS Pro</h1>
-            <p>Professional Audio Synchronization</p>
-            <a 
-                class="btn-primary" 
-                href="https://huggingface.co/datasets/Joelson-Forte/Auto-Sync-for-Vegas-Pro/resolve/main/Auto_Sync_v2.0.1_for_Vegas_Pro.zip?download=true"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Download (v2.0.1)
-            </a>
+  <header id="hero">
+    <div class="container">
+      <h1>Auto Sync for VEGAS Pro</h1>
+      <p>Professional Audio Synchronization</p>
+      <a class="btn-primary"
+        href="https://huggingface.co/datasets/Joelson-Forte/Auto-Sync-for-Vegas-Pro/resolve/main/Auto_Sync_v2.0.1_for_Vegas_Pro.zip?download=true"
+        target="_blank" rel="noopener noreferrer">
+        Download (v2.0.1)
+      </a>
+    </div>
+  </header>
+
+  <section id="demo">
+    <div class="container">
+      <h2>See Auto Sync for VEGAS Pro in Action</h2>
+      <iframe src="https://www.youtube.com/embed/ypX12ZWO2RI" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="sync-methods">
+    <div class="container">
+      <h2>✨ Key Features of Auto Sync for VEGAS Pro</h2>
+
+      <div class="sync-block">
+        <h3>🌊 Synchronization by Waveform</h3>
+        <p>This method is ideal for projects where audio is recorded separately but shares common sound elements with the video. It aligns audio tracks by analyzing <strong>waveform patterns</strong>.</p>
+        <h4>Core Features:</h4>
+        <ul>
+          <li><strong>Advanced Audio Analysis</strong>: Intelligent waveform comparison for high accuracy.</li>
+          <li><strong>External Audio Ready</strong>: Perfect for syncing tracks from dedicated external recorders or high-quality microphones.</li>
+          <li><strong>User-Friendly</strong>: Quick and accurate alignment with a straightforward interface.</li>
+        </ul>
+        <h4>Benefits for Your Workflow:</h4>
+        <ul>
+          <li><strong>Significant Time Savings</strong>: Automates the most tedious part of multi-source editing.</li>
+          <li><strong>High-Precision</strong>: Ensures synchronization without manual frame-by-frame effort.</li>
+          <li><strong>Versatile Use</strong>: Ideal for <strong>multi-camera setups, interviews</strong>, and live events.</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div class="sync-block">
+        <h3>⏱️ Synchronization by Timecode</h3>
+        <p>Designed for professional productions, this method uses <strong>timecode metadata</strong> to instantly and precisely synchronize audio and video files.</p>
+        <h4>Core Features:</h4>
+        <ul>
+          <li><strong>Direct Metadata Reading</strong>: Reads timecode data directly from media files.</li>
+          <li><strong>Reliable Alignment</strong>: Uses embedded time data for <strong>instant and precise</strong> alignment.</li>
+          <li><strong>Fast Processing</strong>: Handles rapid synchronization of large media libraries.</li>
+        </ul>
+        <h4>Benefits for Your Workflow:</h4>
+        <ul>
+          <li><strong>Essential for Pro Projects</strong>: Vital for film, TV, and <strong>long-form media projects</strong>.</li>
+          <li><strong>Improved Workflow</strong>: Eliminates manual syncing for high-volume, complex projects.</li>
+          <li><strong>Better File Management</strong>: Enhances organization and traceability in post-production.</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div class="sync-block">
+        <h3>⚙️ Manual Offset Synchronization</h3>
+        <p>This method gives the user <strong>absolute control</strong> to correct persistent audio delays or minor drift not solved by automatic methods, applying a precise, measured time adjustment. It's the perfect tool for fine-tuning.</p>
+        <h4>Core Features:</h4>
+        <ul>
+          <li><strong>Precise Time Input</strong>: Allows users to enter the exact delay amount in <strong>milliseconds (ms)</strong>.</li>
+          <li><strong>Latency Correction</strong>: Ideal for solving consistent audio/video delays caused by <strong>external hardware latency</strong> (e.g., recorders, cameras).</li>
+          <li><strong>Surgical Adjustment</strong>: Provides a microscopic and <strong>frame-accurate</strong> correction for audio that is consistently ahead or behind.</li>
+        </ul>
+        <h4>Benefits for Your Workflow:</h4>
+        <ul>
+          <li><strong>Guaranteed Lip Sync</strong>: Ensures the highest level of <strong>lip synchronization</strong> accuracy in challenging projects.</li>
+          <li><strong>Overrides Auto Fails</strong>: Acts as a reliable fallback when automatic <em>waveform</em> analysis fails due to low-quality or <strong>noisy audio</strong>.</li>
+          <li><strong>Expert Control</strong>: Empowers the editor with the <strong>final say</strong> on the synchronization alignment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="purchase-contact">
+    <div class="container side-by-side">
+      <div class="pricing-box">
+        <h2>Get it Now</h2>
+        <div class="card">
+          <h3>Full Version</h3>
+          <p><strong>US$ 49</strong> - Lifetime license</p>
+          <p>Please send a message to confirm your order. A PayPal invoice will be emailed to you, and your serial number will be sent after payment is confirmed.</p>
         </div>
-    </header>
+      </div>
 
-    <section id="demo">
-        <div class="container">
-            <h2>See Auto Sync for VEGAS Pro in Action</h2>
-            <iframe src="https://www.youtube.com/embed/ypX12ZWO2RI" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>    
+      <div class="contact-box">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/xvgagnja" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Auto Sync for Vegas Pro Purchase/Support">
+          <input type="text" name="name" placeholder="Your name" required><br>
+          <input type="email" name="email" placeholder="Your email" required><br>
+          <textarea name="message" placeholder="Write your message here" rows="5"></textarea><br>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <section id="sync-methods">
-        <div class="container">
-            <h2>✨ Key Features of Auto Sync for VEGAS Pro</h2>
-
-            <div class="sync-block">
-                <h3>🌊 Synchronization by Waveform</h3>
-                <p>This method is ideal for projects where audio is recorded separately but shares common sound elements with the video. It aligns audio tracks by analyzing <strong>waveform patterns</strong>.</p>
-                <h4>Core Features:</h4>
-                <ul>
-                    <li><strong>Advanced Audio Analysis</strong>: Intelligent waveform comparison for high accuracy.</li>
-                    <li><strong>External Audio Ready</strong>: Perfect for syncing tracks from dedicated external recorders or high-quality microphones.</li>
-                    <li><strong>User-Friendly</strong>: Quick and accurate alignment with a straightforward interface.</li>
-                </ul>
-                <h4>Benefits for Your Workflow:</h4>
-                <ul>
-                    <li><strong>Significant Time Savings</strong>: Automates the most tedious part of multi-source editing.</li>
-                    <li><strong>High-Precision</strong>: Ensures synchronization without manual frame-by-frame effort.</li>
-                    <li><strong>Versatile Use</strong>: Ideal for <strong>multi-camera setups, interviews</strong>, and live events.</li>
-                </ul>
-            </div>
-            
-            <div class="sync-block">
-                <hr>
-            </div>
-            
-            <div class="sync-block">
-                <h3>⏱️ Synchronization by Timecode</h3>
-                <p>Designed for professional productions, this method uses <strong>timecode metadata</strong> to instantly and precisely synchronize audio and video files.</p>
-                <h4>Core Features:</h4>
-                <ul>
-                    <li><strong>Direct Metadata Reading</strong>: Reads timecode data directly from media files.</li>
-                    <li><strong>Reliable Alignment</strong>: Uses embedded time data for <strong>instant and precise</strong> alignment.</li>
-                    <li><strong>Fast Processing</strong>: Handles rapid synchronization of large media libraries.</li>
-                </ul>
-                <h4>Benefits for Your Workflow:</h4>
-                <ul>
-                    <li><strong>Essential for Pro Projects</strong>: Vital for film, TV, and <strong>long-form media projects</strong>.</li>
-                    <li><strong>Improved Workflow</strong>: Eliminates manual syncing for high-volume, complex projects.</li>
-                    <li><strong>Better File Management</strong>: Enhances organization and traceability in post-production.</li>
-                </ul>
-            </div>
-
-            <div class="sync-block">
-                <hr>
-            </div>
-
-            <div class="sync-block">
-                <h3>⚙️ Manual Offset Synchronization</h3>
-                <p>This method gives the user <strong>absolute control</strong> to correct persistent audio delays or minor drift not solved by automatic methods, applying a precise, measured time adjustment. It's the perfect tool for fine-tuning.</p>
-                <h4>Core Features:</h4>
-                <ul>
-                    <li><strong>Precise Time Input</strong>: Allows users to enter the exact delay amount in <strong>milliseconds (ms)</strong>.</li>
-                    <li><strong>Latency Correction</strong>: Ideal for solving consistent audio/video delays caused by <strong>external hardware latency</strong> (e.g., recorders, cameras).</li>
-                    <li><strong>Surgical Adjustment</strong>: Provides a microscopic and <strong>frame-accurate</strong> correction for audio that is consistently ahead or behind.</li>
-                </ul>
-                <h4>Benefits for Your Workflow:</h4>
-                <ul>
-                    <li><strong>Guaranteed Lip Sync</strong>: Ensures the highest level of <strong>lip synchronization</strong> accuracy in challenging projects.</li>
-                    <li><strong>Overrides Auto Fails</strong>: Acts as a reliable fallback when automatic <em>waveform</em> analysis fails due to low-quality or <strong>noisy audio</strong>.</li>
-                    <li><strong>Expert Control</strong>: Empowers the editor with the <strong>final say</strong> on the synchronization alignment.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing">
-        <div class="container">
-            <h2>Get it Now</h2>
-            <div class="pricing-cards">
-                <div class="card">
-                    <h3>Full Version</h3>
-                    <p><strong>US$ 49</strong> - Lifetime license</p>
-                    <p>Please send a message to confirm your order. A PayPal invoice will be emailed to you, and your serial number will be sent after payment is confirmed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form action="https://formspree.io/f/xvgagnja" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="Auto Sync for Vegas Pro Purchase/Support">
-                <input type="text" name="name" placeholder="Your name" required><br>
-                <input type="email" name="email" placeholder="Your email" required><br>
-                <textarea name="message" placeholder="Write your message here" rows="5"></textarea><br>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>Contact and Support: joelsonforte.br@gmail.com</p>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p>Contact and Support: joelsonforte.br@gmail.com</p>
+    </div>
+  </footer>
 </body>
 </html>
